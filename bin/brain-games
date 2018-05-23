@@ -1,0 +1,5 @@
+#!/usr/bin/env php
+
+<?php
+
+echo "Welcome to the \033[1mBrain\033[0m Games!\n";

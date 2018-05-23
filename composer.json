@@ -1,0 +1,22 @@
+{
+    "name": "bondsa/brain-games",
+    "bin": ["bin/brain-games"],
+    "description": "Brain games",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sergei Bondarenko",
+            "email": "andbondsa@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "BrainGames\\": "src"
+        }
+    },
+
+    "require": {
+        "php": ">=5.4.0"
+    }
+}
