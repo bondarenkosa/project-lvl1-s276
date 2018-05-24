@@ -2,4 +2,6 @@
 
 <?php
 
-echo "Welcome to the \033[1mBrain\033[0m Games!\n";
+require_once __DIR__ . '/../vendor/autoload.php';
+
+BrainGames\Cli\run();
