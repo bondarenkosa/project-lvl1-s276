@@ -1,6 +1,9 @@
 {
     "name": "bondsa/brain-games",
-    "bin": ["bin/brain-games"],
+    "bin": [
+        "bin/brain-games",
+        "bin/brain-even"
+    ],
     "description": "Brain games",
     "type": "project",
     "authors": [
@@ -17,10 +20,13 @@
         "psr-4": {
             "BrainGames\\": "src"
         },
-        "files": ["src/Cli.php"]
+        "files": [
+            "src/Cli.php",
+            "src/Games/Even.php"
+        ]
     },
     "require": {
-        "php": ">= 5.6.0",
+        "php": ">= 7.0.0",
         "wp-cli/php-cli-tools": "^0.11.9"
     },  
     "require-dev": {
