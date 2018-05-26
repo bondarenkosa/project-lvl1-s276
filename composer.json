@@ -2,7 +2,8 @@
     "name": "bondsa/brain-games",
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "description": "Brain games",
     "type": "project",
@@ -23,7 +24,8 @@
         "files": [
             "src/Cli.php",
             "src/GameFlow.php",
-            "src/Games/Even.php"
+            "src/Games/Even.php",
+            "src/Games/Calc.php"
         ]
     },
     "require": {
