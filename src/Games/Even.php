@@ -14,7 +14,7 @@ function run()
         $question = rand(MIN_NUM, MAX_NUM);
         $correctAnswer = isEven($question) ? 'yes' : 'no';
 
-        return [$question, $correctAnswer];
+        return [(string) $question, (string) $correctAnswer];
     };
 
     runGameFlow(GAME_TASK, $getAttempt);

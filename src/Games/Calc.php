@@ -19,7 +19,7 @@ function run()
         $question = "{$firstNum} {$operator} {$secondNum}";
         $correctAnswer = calculateExpression($question);
 
-        return [$question, $correctAnswer];
+        return [$question, (string) $correctAnswer];
     };
 
     runGameFlow(GAME_TASK, $getAttempt);

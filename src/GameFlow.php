@@ -22,7 +22,7 @@ function run(string $gameTask, callable $getAttempt)
         line("Question: $question");
         $userAnswer = prompt('Your answer');
 
-        if ($userAnswer == $correctAnswer) {
+        if ($userAnswer === $correctAnswer) {
             line('Correct!');
             $attemptsCount++;
         } else {
