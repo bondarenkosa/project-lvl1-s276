@@ -5,7 +5,7 @@
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
-        "brain-balance"
+        "bin/brain-balance"
     ],
     "description": "Brain games",
     "type": "project",
