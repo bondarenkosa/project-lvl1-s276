@@ -10,18 +10,14 @@ function getGameTask()
     return 'Find the greatest common divisor of given numbers.';
 }
 
-function getQuestion()
+function getAttempt()
 {
-    $randomFirstNum = rand(MIN_NUM, MAX_NUM);
-    $randomSecondNum = rand(MIN_NUM, MAX_NUM);
-    return "{$randomFirstNum} {$randomSecondNum}";
-}
+    $firstNum = rand(MIN_NUM, MAX_NUM);
+    $secondNum = rand(MIN_NUM, MAX_NUM);
+    $question = "{$firstNum} {$secondNum}";
+    $correctAnswer = calculateGcd($firstNum, $secondNum);
 
-function getCorrectAnswer($question)
-{
-    [$firstNum, $secondNum] = explode(' ', $question);
-
-    return calculateGcd($firstNum, $secondNum);
+    return [$question, $correctAnswer];
 }
 
 function calculateGcd($a, $b)

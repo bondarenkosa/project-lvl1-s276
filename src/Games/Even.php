@@ -10,14 +10,12 @@ function getGameTask()
     return 'Answer "yes" if number even otherwise answer "no".';
 }
 
-function getQuestion()
+function getAttempt()
 {
-    return rand(MIN_NUM, MAX_NUM);
-}
+    $question = rand(MIN_NUM, MAX_NUM);
+    $correctAnswer = isEven($question) ? 'yes' : 'no';
 
-function getCorrectAnswer($question)
-{
-    return isEven($question) ? 'yes' : 'no';
+    return [$question, $correctAnswer];
 }
 
 function isEven($num)

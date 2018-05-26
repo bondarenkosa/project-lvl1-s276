@@ -10,16 +10,19 @@ const MAX_ATTEMPTS_COUNT = 3;
 function run(string $gameName)
 {
     $getGameTask = "BrainGames\Games\\{$gameName}\\getGameTask";
-    $getQuestion = "BrainGames\Games\\{$gameName}\\getQuestion";
-    $getCorrectAnswer = "BrainGames\Games\\{$gameName}\\getCorrectAnswer";
+    $getAttempt = "BrainGames\Games\\{$gameName}\\getAttempt";
+    $gameTask = $getGameTask();
 
-    $userName = startGame($getGameTask());
+    line('Welcome to the Brain Game!');
+    line($gameTask);
+    line('');
+    $userName = prompt('May I have your name?');
+    line("Hello, %s!", $userName);
+    line('');
 
     $attemptsCount = 0;
     while ($attemptsCount < MAX_ATTEMPTS_COUNT) {
-        $question = $getQuestion();
-        $correctAnswer = $getCorrectAnswer($question);
-
+        [$question, $correctAnswer] = $getAttempt();
         line("Question: $question");
         $userAnswer = prompt('Your answer');
 
@@ -36,15 +39,4 @@ function run(string $gameName)
     }
     
     line("Congratulations, {$userName}!");
-}
-
-function startGame(string $gameTask)
-{
-    line('Welcome to the Brain Game!');
-    line($gameTask);
-    line('');
-    $userName = prompt('May I have your name?');
-    line("Hello, %s!", $userName);
-    line('');
-    return $userName;
 }

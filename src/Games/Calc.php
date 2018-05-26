@@ -10,19 +10,22 @@ function getGameTask()
     return 'What is the result of the expression?';
 }
 
-function getQuestion()
+function getAttempt()
 {
-    $expressions = ['+', '-', '*'];
-    $randomFirstNum = rand(MIN_NUM, MAX_NUM);
-    $randomSecondNum = rand(MIN_NUM, MAX_NUM);
-    $randomExpression = $expressions[array_rand($expressions)];
-    return "{$randomFirstNum} {$randomExpression} {$randomSecondNum}";
+    $operators = ['+', '-', '*'];
+    $firstNum = rand(MIN_NUM, MAX_NUM);
+    $secondNum = rand(MIN_NUM, MAX_NUM);
+    $operator = $operators[array_rand($operators)];
+    $question = "{$firstNum} {$operator} {$secondNum}";
+    $correctAnswer = calculateExpression($question);
+
+    return [$question, $correctAnswer];
 }
 
-function getCorrectAnswer($question)
+function calculateExpression($expression)
 {
-    [$firstNum, $expression, $secondNum] = explode(' ', $question);
-    switch ($expression) {
+    [$firstNum, $operator, $secondNum] = explode(' ', $expression);
+    switch ($operator) {
         case '+':
             $result = $firstNum + $secondNum;
             break;
