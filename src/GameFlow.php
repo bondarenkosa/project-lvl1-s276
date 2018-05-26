@@ -7,12 +7,8 @@ use function \cli\prompt;
 
 const MAX_ATTEMPTS_COUNT = 3;
 
-function run(string $gameName)
+function run(string $gameTask, callable $getAttempt)
 {
-    $getGameTask = "BrainGames\Games\\{$gameName}\\getGameTask";
-    $getAttempt = "BrainGames\Games\\{$gameName}\\getAttempt";
-    $gameTask = $getGameTask();
-
     line('Welcome to the Brain Game!');
     line($gameTask);
     line('');

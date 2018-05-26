@@ -2,24 +2,26 @@
 
 namespace BrainGames\Games\Calc;
 
+use function BrainGames\GameFlow\run as runGameFlow;
+
+const GAME_TASK = 'What is the result of the expression?';
 const MIN_NUM = 1;
 const MAX_NUM = 30;
 
-function getGameTask()
+function run()
 {
-    return 'What is the result of the expression?';
-}
+    $getAttempt = function () {
+        $operators = ['+', '-', '*'];
+        $firstNum = rand(MIN_NUM, MAX_NUM);
+        $secondNum = rand(MIN_NUM, MAX_NUM);
+        $operator = $operators[array_rand($operators)];
+        $question = "{$firstNum} {$operator} {$secondNum}";
+        $correctAnswer = calculateExpression($question);
 
-function getAttempt()
-{
-    $operators = ['+', '-', '*'];
-    $firstNum = rand(MIN_NUM, MAX_NUM);
-    $secondNum = rand(MIN_NUM, MAX_NUM);
-    $operator = $operators[array_rand($operators)];
-    $question = "{$firstNum} {$operator} {$secondNum}";
-    $correctAnswer = calculateExpression($question);
+        return [$question, $correctAnswer];
+    };
 
-    return [$question, $correctAnswer];
+    runGameFlow(GAME_TASK, $getAttempt);
 }
 
 function calculateExpression($expression)
