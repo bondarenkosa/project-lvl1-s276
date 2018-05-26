@@ -12,7 +12,6 @@ const OPERATORS = ['+', '-', '*'];
 function run()
 {
     $getAttempt = function () {
-        $operators = ['+', '-', '*'];
         $firstNum = rand(MIN_NUM, MAX_NUM);
         $secondNum = rand(MIN_NUM, MAX_NUM);
         $operator = OPERATORS[array_rand(OPERATORS)];

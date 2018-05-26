@@ -11,6 +11,7 @@ Terminal based Mini Games
 - **brain-even** _(Answer "yes" if number even otherwise answer "no".)_
 - **brain-calc** _(What is the result of the expression?)_
 - **brain-gcd** _(Find the greatest common divisor of given numbers.)_
+- **brain-balance** _(Balance the given number.)_
 
 ## Getting Started
 
