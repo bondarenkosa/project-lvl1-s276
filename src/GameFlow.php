@@ -13,12 +13,7 @@ function run(string $gameName)
     $getQuestion = "BrainGames\Games\\{$gameName}\\getQuestion";
     $getCorrectAnswer = "BrainGames\Games\\{$gameName}\\getCorrectAnswer";
 
-    line('Welcome to the Brain Game!');
-    line($getGameTask());
-    line('');
-    $userName = prompt('May I have your name?');
-    line("Hello, %s!", $userName);
-    line('');
+    $userName = startGame($getGameTask());
 
     $attemptsCount = 0;
     while ($attemptsCount < MAX_ATTEMPTS_COUNT) {
@@ -41,4 +36,14 @@ function run(string $gameName)
     }
     
     line("Congratulations, {$userName}!");
+}
+
+function startGame(string $gameTask)
+{
+    line('Welcome to the Brain Game!');
+    line($gameTask);
+    line('');
+    $userName = prompt('May I have your name?');
+    line("Hello, %s!", $userName);
+    line('');
 }
