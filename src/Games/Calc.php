@@ -7,6 +7,7 @@ use function BrainGames\GameFlow\run as runGameFlow;
 const GAME_TASK = 'What is the result of the expression?';
 const MIN_NUM = 1;
 const MAX_NUM = 30;
+const OPERATORS = ['+', '-', '*'];
 
 function run()
 {
@@ -14,7 +15,7 @@ function run()
         $operators = ['+', '-', '*'];
         $firstNum = rand(MIN_NUM, MAX_NUM);
         $secondNum = rand(MIN_NUM, MAX_NUM);
-        $operator = $operators[array_rand($operators)];
+        $operator = OPERATORS[array_rand(OPERATORS)];
         $question = "{$firstNum} {$operator} {$secondNum}";
         $correctAnswer = calculateExpression($question);
 
@@ -27,6 +28,8 @@ function run()
 function calculateExpression($expression)
 {
     [$firstNum, $operator, $secondNum] = explode(' ', $expression);
+    $firstNum = (int) $firstNum;
+    $secondNum = (int) $secondNum;
     switch ($operator) {
         case '+':
             $result = $firstNum + $secondNum;
