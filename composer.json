@@ -22,6 +22,7 @@
         },
         "files": [
             "src/Cli.php",
+            "src/GameFlow.php",
             "src/Games/Even.php"
         ]
     },
