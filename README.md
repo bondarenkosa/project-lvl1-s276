@@ -13,6 +13,7 @@ Terminal based Mini Games
 - **brain-gcd** _(Find the greatest common divisor of given numbers.)_
 - **brain-balance** _(Balance the given number.)_
 - **brain-progression** _(What number is missing in this progression?)_
+- **brain-prime** _(Answer "yes" if number prime otherwise answer "no".)_
 
 ## Getting Started
 
