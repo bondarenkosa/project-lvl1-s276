@@ -24,13 +24,13 @@ function calculateBalanceNum(int $number)
 {
     $digits = str_split((strval($number)));
     $sumOfDigits = array_sum($digits);
-    $maxDigitCount = $sumOfDigits % sizeof($digits);
-    $minDigit = floor($sumOfDigits / sizeof($digits));
+    $length = sizeof($digits);
+    $maxDigitCount = $sumOfDigits % $length;
+    $minDigit = floor($sumOfDigits / $length);
     $maxDigit = $minDigit + 1;
 
-    $result = [];
-    $result = array_pad($result, sizeof($digits) - $maxDigitCount, $minDigit);
-    $result = array_pad($result, sizeof($digits), $maxDigit);
+    $part = array_pad([], $length - $maxDigitCount, $minDigit);
+    $result = array_pad($part, $length, $maxDigit);
 
     return implode('', $result);
 }
